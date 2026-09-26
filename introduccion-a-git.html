@@ -79,6 +79,63 @@
     color: #57606a;
     font-size: 0.9em;
   }
+
+  .diagrama-ramas {
+    position: relative;
+    padding: 30px 20px 20px 120px;
+    margin-top: 20px;
+  }
+  .linea-rama {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  .etiqueta-rama {
+    position: absolute;
+    left: -110px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.85em;
+    color: #24292f;
+    background: #eaeef2;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .rama-nueva .etiqueta-rama {
+    background: #ddf4ff;
+    color: #0969da;
+  }
+  .punto {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #57606a;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .punto-nuevo {
+    background: #0969da;
+  }
+  .linea {
+    height: 3px;
+    background: #57606a;
+    flex-grow: 1;
+  }
+  .rama-nueva .linea {
+    background: #0969da;
+  }
+  .rama-nueva {
+    margin-top: 10px;
+  }
+  .linea.diagonal {
+    height: 2px;
+    width: 40px;
+    flex-grow: 0;
+    background: #0969da;
+    transform: rotate(-25deg);
+    transform-origin: left center;
+    margin-right: -10px;
+  }
 </style>
 </head>
 <body>
@@ -157,6 +214,52 @@ git push            # subir al remoto</code></pre>
       Esto se repite una y otra vez mientras trabajas: modificas archivos, los agregas,
       haces commit, y subes (push) cuando quieres compartir o respaldar tu avance.
     </p>
+  </section>
+
+  <section>
+    <h2>Simulación: crear una rama nueva</h2>
+    <p>Así se ve, paso a paso, el proceso de crear una rama nueva a partir de <code>main</code>:</p>
+
+    <p><strong>1. Estás en la rama principal</strong></p>
+    <pre><code>$ git branch
+* main</code></pre>
+
+    <p><strong>2. Creas y te cambias a la rama nueva</strong></p>
+    <pre><code>$ git checkout -b nueva-funcion
+Switched to a new branch 'nueva-funcion'</code></pre>
+
+    <p><strong>3. Ahora tus commits van a la rama nueva, sin tocar <code>main</code></strong></p>
+    <pre><code>$ git add .
+$ git commit -m "Empiezo a trabajar en la nueva función"
+[nueva-funcion a1b2c3d] Empiezo a trabajar en la nueva función</code></pre>
+
+    <p><strong>4. Puedes confirmar en qué rama estás y ver ambas</strong></p>
+    <pre><code>$ git branch
+  main
+* nueva-funcion</code></pre>
+
+    <div class="diagrama-ramas">
+      <div class="linea-rama">
+        <span class="etiqueta-rama">main</span>
+        <div class="punto"></div>
+        <div class="linea"></div>
+        <div class="punto"></div>
+      </div>
+      <div class="linea-rama rama-nueva">
+        <span class="etiqueta-rama">nueva-funcion</span>
+        <div class="linea diagonal"></div>
+        <div class="punto punto-nuevo"></div>
+        <div class="linea"></div>
+        <div class="punto punto-nuevo"></div>
+      </div>
+    </div>
+    <p style="text-align:center; color:#57606a; font-size:0.9em;">
+      La rama nueva parte de un commit de <code>main</code> y sigue su propio camino.
+    </p>
+
+    <p>Cuando termines y quieras juntar los cambios de nuevo con <code>main</code>:</p>
+    <pre><code>$ git checkout main
+$ git merge nueva-funcion</code></pre>
   </section>
 
   <section>
