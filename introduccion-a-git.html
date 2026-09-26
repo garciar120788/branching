@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introducción a Git</title>
+<title>Introducción a GitHub</title>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -14,7 +14,7 @@
     line-height: 1.6;
   }
   header {
-    background: #24292f;
+    background: #0d1117;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -24,7 +24,7 @@
     font-size: 2.2em;
   }
   header p {
-    color: #c9d1d9;
+    color: #8b949e;
     margin-top: 8px;
   }
   main {
@@ -52,7 +52,7 @@
     color: #cf222e;
   }
   pre {
-    background: #24292f;
+    background: #0d1117;
     color: #e6edf3;
     padding: 16px;
     border-radius: 6px;
@@ -63,15 +63,28 @@
     color: inherit;
     padding: 0;
   }
-  .comando {
+  .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
     border-bottom: 1px solid #eaeef2;
+    gap: 16px;
   }
-  .comando:last-child {
+  .item:last-child {
     border-bottom: none;
+  }
+  .item span:first-child {
+    flex-shrink: 0;
+  }
+  .badge {
+    display: inline-block;
+    background: #ddf4ff;
+    color: #0969da;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 600;
   }
   footer {
     text-align: center;
@@ -79,202 +92,98 @@
     color: #57606a;
     font-size: 0.9em;
   }
-
-  .diagrama-ramas {
-    position: relative;
-    padding: 30px 20px 20px 120px;
-    margin-top: 20px;
-  }
-  .linea-rama {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 50px;
-  }
-  .etiqueta-rama {
-    position: absolute;
-    left: -110px;
-    font-family: "SFMono-Regular", Consolas, monospace;
-    font-size: 0.85em;
-    color: #24292f;
-    background: #eaeef2;
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-  .rama-nueva .etiqueta-rama {
-    background: #ddf4ff;
-    color: #0969da;
-  }
-  .punto {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #57606a;
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .punto-nuevo {
-    background: #0969da;
-  }
-  .linea {
-    height: 3px;
-    background: #57606a;
-    flex-grow: 1;
-  }
-  .rama-nueva .linea {
-    background: #0969da;
-  }
-  .rama-nueva {
-    margin-top: 10px;
-  }
-  .linea.diagonal {
-    height: 2px;
-    width: 40px;
-    flex-grow: 0;
-    background: #0969da;
-    transform: rotate(-25deg);
-    transform-origin: left center;
-    margin-right: -10px;
-  }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🌱 Introducción a Git</h1>
-  <p>Lo básico para empezar a controlar versiones de tu código</p>
+  <h1>🐙 Introducción a GitHub</h1>
+  <p>Cómo alojar, compartir y colaborar en tus repositorios de Git</p>
 </header>
 
 <main>
 
   <section>
-    <h2>¿Qué es Git?</h2>
+    <h2>¿Qué es GitHub?</h2>
     <p>
-      Git es un <strong>sistema de control de versiones</strong>. Sirve para guardar el
-      historial de cambios de tus archivos (normalmente código), poder volver atrás si algo
-      sale mal, y trabajar en equipo sin pisarse el trabajo unos a otros.
+      GitHub es una <strong>plataforma en la nube</strong> para alojar repositorios de Git.
+      Mientras Git corre en tu computadora y guarda el historial de cambios, GitHub te
+      permite subir ese repositorio a internet para respaldarlo, compartirlo y trabajar
+      en equipo con otras personas.
     </p>
     <p>
-      No hay que confundirlo con <strong>GitHub</strong>: Git es la herramienta que corre en
-      tu computadora, y GitHub es un sitio web donde puedes subir tus repositorios de Git
-      para compartirlos o respaldarlos.
+      Además de alojar código, GitHub agrega herramientas de colaboración: issues,
+      pull requests, revisiones de código, automatización y más.
     </p>
   </section>
 
   <section>
     <h2>Conceptos clave</h2>
-    <div class="comando"><span><code>repositorio</code></span><span>Carpeta con tu proyecto que Git está vigilando</span></div>
-    <div class="comando"><span><code>commit</code></span><span>Una "foto" guardada de tus cambios en un momento dado</span></div>
-    <div class="comando"><span><code>branch (rama)</code></span><span>Una línea de trabajo separada para probar cosas sin afectar lo principal</span></div>
-    <div class="comando"><span><code>remote</code></span><span>Una copia del repositorio en otro lugar (como GitHub)</span></div>
+    <div class="item"><span><span class="badge">repositorio</span></span><span>Tu proyecto alojado en GitHub, con todo su historial de Git</span></div>
+    <div class="item"><span><span class="badge">fork</span></span><span>Una copia de un repositorio ajeno en tu propia cuenta</span></div>
+    <div class="item"><span><span class="badge">pull request</span></span><span>Una propuesta para incorporar tus cambios al repositorio original</span></div>
+    <div class="item"><span><span class="badge">issue</span></span><span>Un reporte de error o una tarea pendiente sobre el proyecto</span></div>
+    <div class="item"><span><span class="badge">clone</span></span><span>Descargar una copia completa de un repositorio a tu computadora</span></div>
   </section>
 
   <section>
-    <h2>Comandos básicos</h2>
+    <h2>Flujo básico con GitHub</h2>
 
-    <p><strong>1. Iniciar un repositorio</strong></p>
-    <pre><code>git init</code></pre>
+    <p><strong>1. Clonar un repositorio existente</strong></p>
+    <pre><code>git clone https://github.com/usuario/repositorio.git</code></pre>
 
-    <p><strong>2. Ver el estado de tus archivos</strong></p>
-    <pre><code>git status</code></pre>
-
-    <p><strong>3. Preparar cambios para guardarlos</strong></p>
-    <pre><code>git add archivo.txt
-git add .   # agrega todos los cambios</code></pre>
-
-    <p><strong>4. Guardar los cambios (hacer un commit)</strong></p>
-    <pre><code>git commit -m "Descripción breve del cambio"</code></pre>
-
-    <p><strong>5. Ver el historial de commits</strong></p>
-    <pre><code>git log</code></pre>
-
-    <p><strong>6. Crear y cambiar de rama</strong></p>
-    <pre><code>git branch nueva-funcion
-git checkout nueva-funcion
-
-# o en un solo paso:
-git checkout -b nueva-funcion</code></pre>
-
-    <p><strong>7. Conectar con un repositorio remoto (ej. GitHub)</strong></p>
+    <p><strong>2. Conectar un repositorio local a GitHub</strong></p>
     <pre><code>git remote add origin https://github.com/usuario/repositorio.git
 git push -u origin main</code></pre>
 
-    <p><strong>8. Traer cambios del remoto</strong></p>
+    <p><strong>3. Subir cambios nuevos</strong></p>
+    <pre><code>git add .
+git commit -m "Descripción del cambio"
+git push</code></pre>
+
+    <p><strong>4. Traer cambios que otros subieron</strong></p>
     <pre><code>git pull</code></pre>
 
   </section>
 
   <section>
-    <h2>Un flujo de trabajo típico</h2>
-    <pre><code>git status          # ver qué cambió
-git add .           # preparar cambios
-git commit -m "..." # guardar cambios
-git push            # subir al remoto</code></pre>
+    <h2>Colaborar con Pull Requests</h2>
+    <p>Un pull request (PR) es la forma en que propones cambios a un proyecto en GitHub:</p>
+    <pre><code># 1. Crea una rama para tu cambio
+git checkout -b arreglo-bug
+
+# 2. Haz tus cambios y súbelos
+git add .
+git commit -m "Arreglo el bug X"
+git push origin arreglo-bug</code></pre>
     <p>
-      Esto se repite una y otra vez mientras trabajas: modificas archivos, los agregas,
-      haces commit, y subes (push) cuando quieres compartir o respaldar tu avance.
+      Después, desde la página de GitHub, abres un <strong>pull request</strong> comparando
+      tu rama con <code>main</code>. El equipo puede revisar tu código, comentar y, si todo
+      está bien, aceptarlo (merge) para incorporarlo al proyecto.
     </p>
   </section>
 
   <section>
-    <h2>Simulación: crear una rama nueva</h2>
-    <p>Así se ve, paso a paso, el proceso de crear una rama nueva a partir de <code>main</code>:</p>
-
-    <p><strong>1. Estás en la rama principal</strong></p>
-    <pre><code>$ git branch
-* main</code></pre>
-
-    <p><strong>2. Creas y te cambias a la rama nueva</strong></p>
-    <pre><code>$ git checkout -b nueva-funcion
-Switched to a new branch 'nueva-funcion'</code></pre>
-
-    <p><strong>3. Ahora tus commits van a la rama nueva, sin tocar <code>main</code></strong></p>
-    <pre><code>$ git add .
-$ git commit -m "Empiezo a trabajar en la nueva función"
-[nueva-funcion a1b2c3d] Empiezo a trabajar en la nueva función</code></pre>
-
-    <p><strong>4. Puedes confirmar en qué rama estás y ver ambas</strong></p>
-    <pre><code>$ git branch
-  main
-* nueva-funcion</code></pre>
-
-    <div class="diagrama-ramas">
-      <div class="linea-rama">
-        <span class="etiqueta-rama">main</span>
-        <div class="punto"></div>
-        <div class="linea"></div>
-        <div class="punto"></div>
-      </div>
-      <div class="linea-rama rama-nueva">
-        <span class="etiqueta-rama">nueva-funcion</span>
-        <div class="linea diagonal"></div>
-        <div class="punto punto-nuevo"></div>
-        <div class="linea"></div>
-        <div class="punto punto-nuevo"></div>
-      </div>
-    </div>
-    <p style="text-align:center; color:#57606a; font-size:0.9em;">
-      La rama nueva parte de un commit de <code>main</code> y sigue su propio camino.
-    </p>
-
-    <p>Cuando termines y quieras juntar los cambios de nuevo con <code>main</code>:</p>
-    <pre><code>$ git checkout main
-$ git merge nueva-funcion</code></pre>
+    <h2>Otras cosas útiles en GitHub</h2>
+    <div class="item"><span>📄</span><span><strong>README.md</strong> — la presentación de tu proyecto en la página principal</span></div>
+    <div class="item"><span>🐛</span><span><strong>Issues</strong> — para reportar errores o proponer ideas</span></div>
+    <div class="item"><span>⚙️</span><span><strong>GitHub Actions</strong> — automatiza pruebas o despliegues cuando subes código</span></div>
+    <div class="item"><span>🔒</span><span><strong>Repositorios privados</strong> — visibles solo para ti o tu equipo</span></div>
   </section>
 
   <section>
     <h2>Consejo para empezar</h2>
     <p>
-      No te preocupes por memorizar todo. Con <code>git status</code>, <code>git add</code>,
-      <code>git commit</code> y <code>git push</code> puedes cubrir el 90% del trabajo diario.
-      El resto (ramas, merges, resolver conflictos) se aprende poco a poco practicando.
+      Crea una cuenta gratis en <code>github.com</code>, sube un proyecto pequeño con
+      <code>git push</code> y practica abriendo un pull request, aunque sea en un repositorio
+      tuyo. Así entenderás el flujo real que se usa en equipos de trabajo.
     </p>
   </section>
 
 </main>
 
 <footer>
-  Hecho para aprender los fundamentos de Git 🚀
+  Hecho para aprender los fundamentos de GitHub 🚀
 </footer>
 
 </body>
