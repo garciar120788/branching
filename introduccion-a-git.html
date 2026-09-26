@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introducción a Git</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f6f8fa;
+    color: #24292f;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  header {
+    background: #24292f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.2em;
+  }
+  header p {
+    color: #c9d1d9;
+    margin-top: 8px;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  section {
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #0969da;
+    border-bottom: 2px solid #d0d7de;
+    padding-bottom: 8px;
+  }
+  code {
+    background: #f6f8fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    color: #cf222e;
+  }
+  pre {
+    background: #24292f;
+    color: #e6edf3;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+  .comando {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eaeef2;
+  }
+  .comando:last-child {
+    border-bottom: none;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #57606a;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌱 Introducción a Git</h1>
+  <p>Lo básico para empezar a controlar versiones de tu código</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>¿Qué es Git?</h2>
+    <p>
+      Git es un <strong>sistema de control de versiones</strong>. Sirve para guardar el
+      historial de cambios de tus archivos (normalmente código), poder volver atrás si algo
+      sale mal, y trabajar en equipo sin pisarse el trabajo unos a otros.
+    </p>
+    <p>
+      No hay que confundirlo con <strong>GitHub</strong>: Git es la herramienta que corre en
+      tu computadora, y GitHub es un sitio web donde puedes subir tus repositorios de Git
+      para compartirlos o respaldarlos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Conceptos clave</h2>
+    <div class="comando"><span><code>repositorio</code></span><span>Carpeta con tu proyecto que Git está vigilando</span></div>
+    <div class="comando"><span><code>commit</code></span><span>Una "foto" guardada de tus cambios en un momento dado</span></div>
+    <div class="comando"><span><code>branch (rama)</code></span><span>Una línea de trabajo separada para probar cosas sin afectar lo principal</span></div>
+    <div class="comando"><span><code>remote</code></span><span>Una copia del repositorio en otro lugar (como GitHub)</span></div>
+  </section>
+
+  <section>
+    <h2>Comandos básicos</h2>
+
+    <p><strong>1. Iniciar un repositorio</strong></p>
+    <pre><code>git init</code></pre>
+
+    <p><strong>2. Ver el estado de tus archivos</strong></p>
+    <pre><code>git status</code></pre>
+
+    <p><strong>3. Preparar cambios para guardarlos</strong></p>
+    <pre><code>git add archivo.txt
+git add .   # agrega todos los cambios</code></pre>
+
+    <p><strong>4. Guardar los cambios (hacer un commit)</strong></p>
+    <pre><code>git commit -m "Descripción breve del cambio"</code></pre>
+
+    <p><strong>5. Ver el historial de commits</strong></p>
+    <pre><code>git log</code></pre>
+
+    <p><strong>6. Crear y cambiar de rama</strong></p>
+    <pre><code>git branch nueva-funcion
+git checkout nueva-funcion
+
+# o en un solo paso:
+git checkout -b nueva-funcion</code></pre>
+
+    <p><strong>7. Conectar con un repositorio remoto (ej. GitHub)</strong></p>
+    <pre><code>git remote add origin https://github.com/usuario/repositorio.git
+git push -u origin main</code></pre>
+
+    <p><strong>8. Traer cambios del remoto</strong></p>
+    <pre><code>git pull</code></pre>
+
+  </section>
+
+  <section>
+    <h2>Un flujo de trabajo típico</h2>
+    <pre><code>git status          # ver qué cambió
+git add .           # preparar cambios
+git commit -m "..." # guardar cambios
+git push            # subir al remoto</code></pre>
+    <p>
+      Esto se repite una y otra vez mientras trabajas: modificas archivos, los agregas,
+      haces commit, y subes (push) cuando quieres compartir o respaldar tu avance.
+    </p>
+  </section>
+
+  <section>
+    <h2>Consejo para empezar</h2>
+    <p>
+      No te preocupes por memorizar todo. Con <code>git status</code>, <code>git add</code>,
+      <code>git commit</code> y <code>git push</code> puedes cubrir el 90% del trabajo diario.
+      El resto (ramas, merges, resolver conflictos) se aprende poco a poco practicando.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Hecho para aprender los fundamentos de Git 🚀
+</footer>
+
+</body>
+</html>
